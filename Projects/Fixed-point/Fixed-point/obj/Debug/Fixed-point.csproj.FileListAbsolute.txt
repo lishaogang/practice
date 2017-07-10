@@ -1,0 +1,6 @@
+D:\code\Projects\Fixed-point\Fixed-point\bin\Debug\Fixed-point.exe.config
+D:\code\Projects\Fixed-point\Fixed-point\bin\Debug\Fixed-point.exe
+D:\code\Projects\Fixed-point\Fixed-point\bin\Debug\Fixed-point.pdb
+D:\code\Projects\Fixed-point\Fixed-point\obj\Debug\Fixed-point.csprojResolveAssemblyReference.cache
+D:\code\Projects\Fixed-point\Fixed-point\obj\Debug\Fixed-point.exe
+D:\code\Projects\Fixed-point\Fixed-point\obj\Debug\Fixed-point.pdb
