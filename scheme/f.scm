@@ -371,15 +371,32 @@
 
 ;(define exit (exit))
 
-(define q (make-queue))
-((q 'insert-queue!) 'a)
-((q 'insert-queue!) 'b)
-((q 'insert-queue!) 'c)
-((q 'insert-queue!) 'd)
-((q 'print-queue))
-((q 'delete-queue!))
-((q 'print-queue))
-((q 'front-queue))
+;(define q (make-queue))
+;((q 'insert-queue!) 'a)
+;((q 'insert-queue!) 'b)
+;((q 'insert-queue!) 'c)
+;((q 'insert-queue!) 'd)
+;((q 'print-queue))
+;((q 'delete-queue!))
+;((q 'print-queue))
+;((q 'front-queue))
 
 
 ;
+(define (make-var)
+ 	(let ((value 0))
+		(define (set-new-value! new-value)
+			(set! value new-value))
+		(define (dispatch m)
+			(cond ((eq? m 'set-new-value) set-new-value!)
+				  ((eq? m 'show-value) (display value))))
+		dispatch))
+
+(define (set-new-value! var new-value)
+	((var 'set-new-value) new-value))
+
+;(define a (make-var))
+;(set-new-value! a 4)
+;(a 'show-value)
+;(set-new-value! a 3)
+;(a 'show-value)
