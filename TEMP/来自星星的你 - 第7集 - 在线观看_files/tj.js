@@ -1,0 +1,12 @@
+﻿document.writeln("<div style=\"display:none\">");
+document.writeln("<script>");
+document.writeln("var _hmt = _hmt || [];");
+document.writeln("(function() {");
+document.writeln("  var hm = document.createElement(\"script\");");
+document.writeln("  hm.src = \"//hm.baidu.com/hm.js?925382be8d3526ece508aca3038c1581\";");
+document.writeln("  var s = document.getElementsByTagName(\"script\")[0]; ");
+document.writeln("  s.parentNode.insertBefore(hm, s);");
+document.writeln("})();");
+document.writeln("</script>");
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_8775'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D8775' type='text/javascript'%3E%3C/script%3E"));

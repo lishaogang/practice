@@ -4,5 +4,5 @@ except ImportError:
     import Image
 
 img = Image.open("./MathPic.ppm")
-img.save("./MathPic.jpg")
+#img.save("./1.jpg")
 img.show()
