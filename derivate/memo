@@ -1,0 +1,7 @@
+#date: 18-4-27 21:11
+#memo: 
+	(1) line 100, function expression() of GExpression 
+		expression with too much redundant brackets which needs to be fixed
+	(2) constan e connot be operated with the others constants
+	(2) unit test
+	(3) add simplification to GExpressionWrapper
