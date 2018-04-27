@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function played(){
+		var vid = document.getElementById('vid');
+		alert(vid.paused);
+	};
+	function pause(){
+		var vid = document.getElementById('vid');
+		vid.pause()
+	};
+	function supportType(vidType,codType){
+		vid = document.createElement('video');
+		isSupport = vid.canPlayType(vidType+'; codecs="'+codType+'"');
+		alert(isSupport);
+	}
+	</script>
+</head>
+<body>
+<audio controls autoplay volume="0.5" id="vid">
+	<source src="./music/LYN.mp3" type="audio/ogg">
+	<source src="./music/socialism.mp3" type="audio/mpeg">
+</audio>
+<br/>
+<button onclick="played()">pause?</button>
+<button onclick="pause()">pause</button>
+<button onclick="supportType('video/ogg','theora,vorbis')">support</button>
+</body>
+</html>

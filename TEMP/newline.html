@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#myCanvas{
+			border: 1px solid blue;
+		}
+	</style>
+	<script type="text/javascript">
+		function wrapText(context, text, x, y, maxWidth, lineHeight){
+			var words = text.split(' ');
+			var line = '';
+
+			for(var i = 0; i < words.length; i++){
+				var testLine = line + words[i] + ' ';
+				var metrics = context.measureText(testLine);
+				var testWidth = metrics.width;
+				if(testWidth > maxWidth){
+					context.fillText(line,x,y);
+					line = words[i] + ' ';
+					y += lineHeight;
+				}else{
+					line = testLine;
+				}
+
+			}
+			context.fillText(line,x,y);
+
+		}
+
+		window.onload = function() {
+			var canvas = document.getElementById('myCanvas');
+			var c = canvas.getContext('2d');
+			var text = "var canvas = document.getElementById('piCanvas');"
+			+"var c = canvas.getContext('2d');"
+			+"c.clearRect(0, 0, canvas.width, canvas.height)"
+			+"var img = document.getElementById('Gianna');"
+			+"var pat = c.createPattern(img, type);"
+			+"c.rect(0, 0, 900, 500);"
+			+"c.fillStyle = pat;"
+			+"c.fill();";
+			var maxWidth = 300;
+			var lineHeight = 25;
+			var x = 10;
+			var y = 60;
+			c.font = '16px Arial';
+			c.fillStyle='#ff0000';
+			wrapText(c,text,x,y,maxWidth,lineHeight);
+			c.moveTo(x+maxWidth, y);
+			c.lineTo(x+maxWidth, canvas.height);
+			c.stroke();
+			
+		}
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width=500 height=500></canvas>
+</body>
+</html>

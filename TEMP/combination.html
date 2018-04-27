@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#myCanvas {
+			border: 1px solid #9c9898;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var canvas = document.getElementById('myCanvas');
+			var c = canvas.getContext('2d');
+			c.beginPath();
+			c.rect(200,20,100,100);
+			c.fillStyle = 'blue';
+			c.fill();
+
+			// c.globalCompositeOperation = 'source-in';
+			// c.globalCompositeOperation = 'source-out';
+			// c.globalCompositeOperation = 'source-over';
+			// c.globalCompositeOperation = 'destination-in';
+			// c.globalCompositeOperation = 'destination-over';
+			// c.globalCompositeOperation = 'destination-out';
+			// c.globalCompositeOperation = 'destination-atop';
+			//c.globalCompositeOperation = 'source-atop';
+			//c.globalCompositeOperation = 'copy';
+			//c.globalCompositeOperation = 'lighter';
+			//c.globalCompositeOperation = 'xor';
+			//c.globalCompositeOperation = 'darker';
+			c.clip()
+
+			c.beginPath();
+			c.arc(280,100,60,0,2*Math.PI,false);
+			c.fillStyle = 'red';
+			c.fill();
+		}
+	</script>
+</head>
+<body>
+<canvas id="myCanvas" width=500 height=500></canvas>
+</body>
+</html>

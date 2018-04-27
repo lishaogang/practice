@@ -1,0 +1,12 @@
+εx ← 0，y ← y1，εy ← 0，y ← y1
+While x ≠ x2 || y ≠ y2 do
+	Plot point at（x，y）
+	If（εy-2Δx < -Δy）
+		x ← x+1，εx ← εx+2Δy，εy ← εy+2Δy
+	EndIf
+	If（εx+2Δy > Δx）
+		y ← y+1，εy ← εy-2Δx，εx ← εx-2Δx
+	EndIf
+EndWhile
+
+

@@ -1,0 +1,10 @@
+算法<2>
+εy ← 0，y ← y1
+While y ≠ y2 do
+	Plot point at（x，y）
+	If（εy-2Δy > -Δy）
+		y ← y+1，εy ← εy+2Δy
+	Else
+		y ← y+1，x ← x+1，εy ← εy+2Δy-2Δx
+EndIf
+EndWhile

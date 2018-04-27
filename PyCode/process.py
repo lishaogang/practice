@@ -1,18 +1,15 @@
-from multiprocessing import Process,Queue
+from multiprocessing import Process
 import os
 import time
-
-def run_proc(name,q):
-    print("sub:proc %s(%d) is running..." % (name, os.getpid()))
-    time.sleep(5)
-    q.put(9,block = False)
+def run_proc(name):
+    print("3> sub:proc %s(%d) is running...\
+	and now is %d" % (name, os.getpid(), time.time()))
 
 if __name__ == '__main__':
-    q = Queue()
-    print('main:Parent proc %d is running... and semaphore is' % (os.getpid()))
-    p = Process(target = run_proc, args = ('test',q))
-    print('main:CHILD PROC START')
+    print('1> main:Parent proc %d is running...and now is %d'\
+	% (os.getpid(),time.time()))
+    p = Process(target = run_proc, args = ('test',))
+    print('2> main:CHILD PROC START and now is %d' % time.time())
     p.start()
-    print('main :semaphore is', q.get())
     p.join()
-    print('main:END')
+    print('4> main:END and now is %d' % time.time())

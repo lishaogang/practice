@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#piCanvas{
+			border: 1px solid #9c9898;
+		}
+	</style>
+	<script type="text/javascript">
+		function draw(type){
+			var canvas = document.getElementById("piCanvas");
+			var c = canvas.getContext("2d");
+			c.clearRect(0,0,canvas.width,canvas.height)
+			var img = document.getElementById("Gianna");
+			var pat = c.createPattern(img,type);
+			c.rect(0,0,900,500);
+			c.fillStyle = pat;
+			c.fill();
+
+		}
+	</script>
+</head>
+<body>
+	<p>Photograph</p>
+	<img src="./Gianna.jpg" id="Gianna"/> <br/>
+	<button onclick="draw('repeat')">repeat</button>
+	<button onclick="draw('repeat-x')">repeat-x</button>
+	<button onclick="draw('repeat-y')">repeat-y</button>
+	<button onclick="draw('no-repeat')">no-repeat</button>
+
+	<br/>
+	<canvas id="piCanvas" width=900 height=500></canvas>
+</body>
+</html>

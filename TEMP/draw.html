@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#myCanvas {
+			border: 1px solid #9c9898;
+		}
+	</style>
+	<script type="text/javascript">
+		/*function draw() {
+			var img = document.getElementById('Gianna');
+			var canvas = document.getElementById('myCanvas');
+			var c = canvas.getContext('2d');
+			c.drawImage(img,10,10);
+		}*/
+		window.onload = function() {
+			var canvas = document.getElementById('myCanvas');
+			var c = canvas.getContext('2d');
+			
+			//绘制文本
+			c.moveTo(canvas.width/2, 0);
+			c.lineTo(canvas.width/2, canvas.height);
+			c.lineWidth = 5;
+			c.strokeStyle = 'red';
+			c.stroke();
+
+			c.font = 'italic 40px Arial';
+			c.fillStyle = 'blue';
+			c.strokeStyle = 'black';
+			c.lineWidth = 2;
+			c.textAlign = 'center';
+			var x = canvas.width/2;
+			var y = canvas.height/2;
+			c.strokeText('Hello World', x, y);
+			c.fillText('Hello World', x, y+50);
+			
+			var metrics = c.measureText('I LOVE YOU');
+			var width = metrics.width;
+			c.front = '30px Arial yellow';
+			c.textAlign = 'center';
+			c.fillStyle = 'black';
+			c.fillText('('+width+'px width)',x,y+100);
+			
+
+			//绘制图片
+			//var img = document.getElementById('Gianna');
+			var img = new Image();
+			img.src = './Gianna.jpg';
+			img.onload = function() {
+				//c.drawImage(img,10,10); //显示图片
+				//c.drawImage(img,10,10,250,250); //指定大小
+				//c.drawImage(img,0,0,100,100,30,30,100,100);//截取图片
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<img  id="Gianna" src="./Gianna.jpg" /><br/>
+	<canvas id="myCanvas" height=500 width= 500></canvas>
+</body>
+</html>

@@ -1,0 +1,12 @@
+算法<1>
+εx ← 0，y ← y1
+While x ≠ x2 do
+	Plot point at（x，y）
+	If（εx+2Δy < Δx）
+		x ← x+1，εx ← εx+2Δy
+	Else
+		x ← x+1，y ← y+1，εx ← εx+2Δy-2Δx
+EndIf
+EndWhile
+
+

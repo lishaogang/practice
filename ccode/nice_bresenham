@@ -1,0 +1,13 @@
+sx ← Δx > 0 ? 1 : -1，Δx ← abs（Δx）
+sy ← Δy > 0 ? 1 : -1，Δy ← abs（Δy）
+ε ← (Δx > Δy ? -Δx : Δy)/2，ε` ← 0，y ← y1，x ← x1
+While x ≠ x2 || y ≠ y2 do
+	Plot point at（x，y）
+	ε` ← ε
+	If（ε`+Δy > 0）
+		ε ← ε+Δy，y ← y+sy
+	EndIf
+	If (ε`-Δx < 0)
+		ε ← ε-Δx，x ← x+sx
+	EndIf
+EndWhile

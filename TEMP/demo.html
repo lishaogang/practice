@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#gdtCanvas{
+				border: 1px solid #9c9898;
+			}
+			#myCanvas{
+				border: 1px solid #9c9898;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+
+				//beginPath和closePath没有关系
+				var canvas = document.getElementById("myCanvas");
+				var c = canvas.getContext("2d");
+				c.beginPath();
+				c.fillStyle="cyan";
+				c.fillRect(0,0,578,200);
+
+
+				//绘制两条相交的直线
+				c.beginPath();
+				c.moveTo(100,50);
+				c.lineTo(150,50);
+				c.lineTo(100,80);
+				c.lineJoin="miter"; //lineJoin: miter(default), round, bevel
+				c.lineWidth=1;
+				c.lineCap = "round"; //lineCap: sound, square, butt(default)
+				c.stroke();
+				//绘制矩形
+				c.beginPath();
+				c.rect(100,150,200,30);
+				c.lineWidth = 5;
+				c.strokeStyle = "black";
+				c.fillStyle="yellow";
+
+				c.stroke();
+				c.fill();
+				
+
+				//绘制圆
+				c.beginPath();
+				c.arc(300,100,80,0,2*Math.PI);
+				c.lineWidth=5;
+				c.strokeStyle="black";
+				c.stroke();
+				c.fillStyle="#9ed6ff";
+				//设置阴影
+				c.shadowColor="green";
+				c.shadowBlur=20;
+				c.shadowOffsetX=10;
+				c.shadowOffsetY=10;
+				//c.globalAlpha=0.2;
+				c.fill();
+				//gdtCanvas
+				var gdtCanvas = document.getElementById("gdtCanvas");
+				var c = gdtCanvas.getContext("2d");
+				//线性渐变				
+				var gdt = c.createLinearGradient(0,0,200,200);
+				gdt.addColorStop(0,"#ff0000");
+				gdt.addColorStop(0.5,"#00ff00");
+				gdt.addColorStop(1,"#0000ff");
+
+				c.fillStyle = gdt;
+				c.strokeStyle = gdt;
+				c.fillRect(10,10,200,200);
+				//径向渐变
+				var gdt1 = c.createRadialGradient(325,100,0,325,100,80);
+				gdt1.addColorStop(0,"#ffffff");
+				gdt1.addColorStop(0.5,"#ff0000");
+				gdt1.addColorStop(1,"#000000");
+				c.fillStyle = gdt1;
+				c.arc(325,100,100,0,2*Math.PI);
+				c.fill();
+
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="gdtCanvas" width=578 height=500> </canvas>
+		<canvas id="myCanvas" width=578 height=200> </canvas>
+	</body>
+</html>

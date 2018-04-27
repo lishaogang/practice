@@ -1,0 +1,15 @@
+ #include <stdint.h>
+float f_sqrt(float x)
+{
+	uint32_t x_bits = 0;
+	x_bits = *((uint32_t*) &x);
+
+	x_bits = (x_bits >> 1) + 532369198;
+
+	return *((float*) &x_bits);
+}
+int main()
+{
+	printf("%f\n", f_sqrt(4.0f));
+	return 0;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bresenham&apos; to &apos;Line&apos;&#x0D;&#x0A;- Original project: &apos;Practice&apos;&#x0D;&#x0A;- Original element: &apos;bresenham&apos;&#x0D;&#x0A;- Renamed element: &apos;Line&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;bresenham&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{bresenham.java[bresenham" matchStrategy="1" name="Line" qualified="false" references="true" similarDeclarations="false" stamp="1509514578106" textual="false" version="1.0"/>
+</session>

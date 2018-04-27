@@ -1,0 +1,8 @@
+$('#p1').text('<% out.print(request.getParameter("name")); %>');
+		var name = unescape(RegExp.$1);
+		$('#p1').text(unescape(name));
+		alert(name);
+		alert(unescape(name));
+
+
+但只有那些眼不见就相信的人有福
