@@ -5,3 +5,8 @@
 	(2) constan e connot be operated with the others constants
 	(2) unit test
 	(3) add simplification to GExpressionWrapper
+#date: 18-4-28 12:29
+#memo:
+	(1) finish GExpressionWrapper
+	(2) finish Lexical Analyzer
+	(3) finish the left task of yesterday
