@@ -2,7 +2,8 @@ public class Main{
 	    static int arr[]={1,2,3,4,5,6,7,8,9};  
 	        static int count=0;  
 		    public static void main(String[] args) {  
-			            dfs(0);  
+			            dfs(0); 
+				    For(;;){}
 				            System.out.println(count/8);  
 					        }  
 		        public static void dfs(int k){  

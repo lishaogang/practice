@@ -1,0 +1,42 @@
+{'S': S, 'E': E, 'T': T, 'X': X, 'M': M, 'N': N, 'Q': Q, 'H': H}
+{'¦Å': ¦Å, '+': +, '-': -, '*': *, '/': /, '^': ^, 'log': log, 'ln': ln, 'sin': sin, 'cos': cos, 'tan': tan, 'v': v, '(': (, ')': ), '#': #, 'n': n, '.': .}
+
+{'S': False, 'E': True, 'T': False, 'X': True, 'M': False, 'N': False, 'Q': False, 'H': True, '¦Å': True, '+': False, '-': False, '*': False, '/': False, '^': False, 'log': False, 'ln': False, 'sin': False, 'cos': False, 'tan': False, 'v': False, '(': False, ')': False, '#': False, 'n': False, '.': False}
+{'S': [(0) S--> T E, (1) S--> + S, (2) S--> - S], 'E': [(3) E--> + T E, (4) E--> - T E, (5) E--> ¦Å], 'T': [(6) T--> M X], 'X': [(7) X--> * M X, (8) X--> / M X, (9) X--> ¦Å], 'M': [(10) M--> log ( N ) ( N ), (11) M--> ln ( N ), (12) M--> sin ( N ), (13) M--> cos ( N ), (14) M--> tan ( N ), (15) M--> N], 'N': [(16) N--> Q H, (17) N--> log ( N ) ( N ), (18) N--> ln ( N ), (19) N--> sin ( N ), (20) N--> cos ( N ), (21) N--> tan ( N )], 'Q': [(24) Q--> v, (25) Q--> n, (26) Q--> ( S )], 'H': [(22) H--> ^ Q H, (23) H--> ¦Å]}
+
+select  (0) S--> T E : {'log', 'cos', 'v', 'tan', 'ln', '(', 'sin', 'n'}
+select  (1) S--> + S : {'+'}
+select  (2) S--> - S : {'-'}
+select  (3) E--> + T E : {'+'}
+select  (4) E--> - T E : {'-'}
+select  (5) E--> ¦Å : {')', '#', '¦Å'}
+select  (6) T--> M X : {'log', 'cos', 'v', 'tan', 'ln', '(', 'sin', 'n'}
+select  (7) X--> * M X : {'*'}
+select  (8) X--> / M X : {'/'}
+select  (9) X--> ¦Å : {'#', '-', '+', ')', '¦Å'}
+select  (10) M--> log ( N ) ( N ) : {'log'}
+select  (11) M--> ln ( N ) : {'ln'}
+select  (12) M--> sin ( N ) : {'sin'}
+select  (13) M--> cos ( N ) : {'cos'}
+select  (14) M--> tan ( N ) : {'tan'}
+select  (15) M--> N : {'log', 'cos', 'v', 'tan', 'ln', '(', 'sin', 'n'}
+select  (16) N--> Q H : {'v', '(', 'n'}
+select  (17) N--> log ( N ) ( N ) : {'log'}
+select  (18) N--> ln ( N ) : {'ln'}
+select  (19) N--> sin ( N ) : {'sin'}
+select  (20) N--> cos ( N ) : {'cos'}
+select  (21) N--> tan ( N ) : {'tan'}
+select  (24) Q--> v : {'v'}
+select  (25) Q--> n : {'n'}
+select  (26) Q--> ( S ) : {'('}
+select  (22) H--> ^ Q H : {'^'}
+select  (23) H--> ¦Å : {'#', '-', '+', ')', '/', '¦Å', '*'}
+
+S {'¦Å': None, '+': ['S', '+'], '-': ['S', '-'], '*': None, '/': None, '^': None, 'log': ['E', 'T'], 'ln': ['E', 'T'], 'sin': ['E', 'T'], 'cos': ['E', 'T'], 'tan': ['E', 'T'], 'v': ['E', 'T'], '(': ['E', 'T'], ')': None, '#': None, 'n': ['E', 'T'], '.': None}
+E {'¦Å': ['¦Å'], '+': ['E', 'T', '+'], '-': ['E', 'T', '-'], '*': None, '/': None, '^': None, 'log': None, 'ln': None, 'sin': None, 'cos': None, 'tan': None, 'v': None, '(': None, ')': ['¦Å'], '#': ['¦Å'], 'n': None, '.': None}
+T {'¦Å': None, '+': None, '-': None, '*': None, '/': None, '^': None, 'log': ['X', 'M'], 'ln': ['X', 'M'], 'sin': ['X', 'M'], 'cos': ['X', 'M'], 'tan': ['X', 'M'], 'v': ['X', 'M'], '(': ['X', 'M'], ')': None, '#': None, 'n': ['X', 'M'], '.': None}
+X {'¦Å': ['¦Å'], '+': ['¦Å'], '-': ['¦Å'], '*': ['X', 'M', '*'], '/': ['X', 'M', '/'], '^': None, 'log': None, 'ln': None, 'sin': None, 'cos': None, 'tan': None, 'v': None, '(': None, ')': ['¦Å'], '#': ['¦Å'], 'n': None, '.': None}
+M {'¦Å': None, '+': None, '-': None, '*': None, '/': None, '^': None, 'log': ['N'], 'ln': ['N'], 'sin': ['N'], 'cos': ['N'], 'tan': ['N'], 'v': ['N'], '(': ['N'], ')': None, '#': None, 'n': ['N'], '.': None}
+N {'¦Å': None, '+': None, '-': None, '*': None, '/': None, '^': None, 'log': [')', 'N', '(', ')', 'N', '(', 'log'], 'ln': [')', 'N', '(', 'ln'], 'sin': [')', 'N', '(', 'sin'], 'cos': [')', 'N', '(', 'cos'], 'tan': [')', 'N', '(', 'tan'], 'v': ['H', 'Q'], '(': ['H', 'Q'], ')': None, '#': None, 'n': ['H', 'Q'], '.': None}
+Q {'¦Å': None, '+': None, '-': None, '*': None, '/': None, '^': None, 'log': None, 'ln': None, 'sin': None, 'cos': None, 'tan': None, 'v': ['v'], '(': [')', 'S', '('], ')': None, '#': None, 'n': ['n'], '.': None}
+H {'¦Å': ['¦Å'], '+': ['¦Å'], '-': ['¦Å'], '*': ['¦Å'], '/': ['¦Å'], '^': ['H', 'Q', '^'], 'log': None, 'ln': None, 'sin': None, 'cos': None, 'tan': None, 'v': None, '(': None, ')': ['¦Å'], '#': ['¦Å'], 'n': None, '.': None}
